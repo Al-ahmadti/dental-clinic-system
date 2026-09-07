@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+@import 'aos/dist/aos.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Cairo', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-medical-primary: #2563eb;
+    --color-medical-primary-dark: #1d4ed8;
+    --color-medical-primary-light: #dbeafe;
+    --color-medical-secondary: #14b8a6;
+    --color-medical-secondary-light: #ccfbf1;
+    --color-medical-bg: #f8fafc;
+    --color-medical-surface: #ffffff;
+    --color-medical-border: #e2e8f0;
+    --color-medical-text: #1e293b;
+    --color-medical-muted: #64748b;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-sans);
+        color: var(--color-medical-text);
+        background: var(--color-medical-bg);
+    }
+}
+
+/* Hero atmosphere */
+.landing-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse 90% 70% at 10% 20%, rgba(37, 99, 235, 0.22), transparent 55%),
+        radial-gradient(ellipse 80% 60% at 90% 70%, rgba(20, 184, 166, 0.18), transparent 50%),
+        linear-gradient(155deg, #0b1220 0%, #1e3a8a 42%, #0f766e 100%);
+    background-size: 140% 140%;
+    animation: hero-shift 18s ease-in-out infinite alternate;
+}
+
+@keyframes hero-shift {
+    from {
+        background-position: 0% 40%;
+    }
+    to {
+        background-position: 100% 60%;
+    }
+}
+
+.landing-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px),
+        radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px);
+    background-size: 48px 48px, 64px 64px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.landing-cta {
+    animation: cta-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes cta-pulse {
+    0%,
+    100% {
+        box-shadow: 0 8px 28px rgba(37, 99, 235, 0.35);
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 12px 36px rgba(20, 184, 166, 0.4);
+        transform: translateY(-2px);
+    }
+}
+
+.landing-fade-up {
+    animation: fade-up 0.9s ease-out both;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.landing-fade-up-delay {
+    animation-delay: 0.18s;
+}
+
+.landing-fade-up-delay-2 {
+    animation-delay: 0.32s;
+}

@@ -1,0 +1,106 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+@source '../../../../resources/views/livewire/**/*';
+@source '../../../../resources/views/components/**/*';
+
+/* ── Medical Light UI ── */
+.fi-body {
+    background-color: #f8fafc !important;
+}
+
+.fi-sidebar {
+    border-inline-end: 1px solid #e2e8f0;
+}
+
+.fi-topbar {
+    background: linear-gradient(90deg, #ffffff 0%, #f8fafc 100%);
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.fi-section,
+.fi-wi-stats-overview-stat,
+.fi-ta-ctn,
+.fi-fo-component-ctn,
+.fi-modal-window {
+    border-radius: 12px !important;
+}
+
+.fi-input-wrp,
+.fi-select-input,
+.fi-textarea {
+    border-radius: 10px !important;
+}
+
+.fi-btn {
+    border-radius: 10px !important;
+}
+
+.fi-ta-row:hover {
+    background-color: rgba(37, 99, 235, 0.06) !important;
+}
+
+.fi-ta-table thead th {
+    background-color: rgba(37, 99, 235, 0.04);
+}
+
+/* ── Medical Dark Mode ── */
+.dark .fi-body {
+    background-color: #0b1220 !important;
+}
+
+.dark .fi-sidebar {
+    background: linear-gradient(180deg, #0f172a 0%, #0b1220 100%) !important;
+    border-inline-end-color: #1e293b;
+}
+
+.dark .fi-topbar {
+    background: linear-gradient(90deg, #111827 0%, #0b1220 100%) !important;
+    border-bottom-color: #1e293b;
+}
+
+.dark .fi-section,
+.dark .fi-wi-stats-overview-stat,
+.dark .fi-ta-ctn,
+.dark .fi-fo-component-ctn,
+.dark .fi-modal-window,
+.dark .fi-simple-main {
+    background-color: #111827 !important;
+    border-color: #1e293b !important;
+}
+
+.dark .fi-ta-row:hover {
+    background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+.dark .fi-ta-table thead th {
+    background-color: rgba(59, 130, 246, 0.12);
+}
+
+/* ── Login polish ── */
+.fi-simple-layout {
+    background:
+        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(37, 99, 235, 0.18), transparent 55%),
+        radial-gradient(ellipse 70% 50% at 85% 80%, rgba(20, 184, 166, 0.14), transparent 50%),
+        linear-gradient(160deg, #f8fafc 0%, #eef2ff 45%, #f0fdfa 100%) !important;
+}
+
+.dark .fi-simple-layout {
+    background:
+        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(59, 130, 246, 0.22), transparent 55%),
+        radial-gradient(ellipse 70% 50% at 85% 80%, rgba(45, 212, 191, 0.12), transparent 50%),
+        linear-gradient(160deg, #0b1220 0%, #0f172a 50%, #111827 100%) !important;
+}
+
+.fi-simple-main {
+    border-radius: 16px !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08) !important;
+    backdrop-filter: blur(8px);
+}
+
+.dark .fi-simple-main {
+    border-color: #1e293b !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35) !important;
+}

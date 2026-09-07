@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Providers;
+
+use App\Models\InventoryMovement;
+use App\Models\Patient;
+use App\Observers\InventoryMovementObserver;
+use App\Observers\PatientObserver;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     */
+    public function register(): void
+    {
+        //
+    }
+
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
+    {
+        InventoryMovement::observe(InventoryMovementObserver::class);
+        Patient::observe(PatientObserver::class);
+    }
+}
